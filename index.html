@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tainted Sweets Nakahara - Turrón Tradicional</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Turrón Tradicional • Tainted Sweets Nakahara</title>
+  <!-- Font Awesome para íconos de redes sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --burgundy-dark: #3b0910;
       --burgundy: #5c0f1c;
       --burgundy-light: #80182a;
       --gold: #d4af37;
@@ -18,847 +16,471 @@
       --black: #0f0f11;
       --dark-card: #181619;
       --text-light: #f8f5f0;
-      --text-muted: #d1c7bd;
+      --text-muted: #c5bcae;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: 'Nunito', sans-serif;
-      background: linear-gradient(135deg, var(--black) 0%, var(--burgundy-dark) 50%, var(--black) 100%);
+      background-color: var(--black);
       color: var(--text-light);
       line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    h1, h2, h3, h4, .brand-logo {
-      font-family: 'Fredoka', sans-serif;
     }
 
     header {
-      background: rgba(15, 15, 17, 0.95);
-      border-bottom: 2px solid var(--gold);
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    }
-
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-    }
-
-    .sub-brand {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-weight: 400;
-      margin-top: -4px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .hero {
-      background: linear-gradient(rgba(15, 15, 17, 0.85), rgba(92, 15, 28, 0.85)), 
-                  url('https://ibb.co/JW7fjtJ1') center/cover;
-      color: var(--text-light);
+      background: linear-gradient(135deg, var(--burgundy), #3a0810);
+      padding: 40px 20px;
       text-align: center;
-      padding: 6rem 1.5rem;
-      position: relative;
-      border-bottom: 1px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
     }
 
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 3.2rem;
-      margin-bottom: 0.5rem;
+    .brand-title {
+      font-size: 2.2rem;
       color: var(--gold);
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    }
-
-    .hero-tag {
-      font-size: 1.2rem;
-      color: var(--gold-light);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
       text-transform: uppercase;
       letter-spacing: 2px;
+      margin-bottom: 8px;
     }
 
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
+    .subtitle {
       color: var(--text-muted);
-    }
-
-    .btn {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold) 0%, #b89628 100%);
-      color: var(--black);
-      font-weight: 800;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
       font-size: 1.1rem;
-      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
-      transition: transform 0.2s, background 0.2s;
-      border: 1px solid var(--gold-light);
-      cursor: pointer;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-    }
-
-    section {
-      padding: 4rem 1.5rem;
-      max-width: 1100px;
+    .container {
+      max-width: 900px;
       margin: 0 auto;
+      padding: 30px 20px;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2.2rem;
       color: var(--gold);
-      margin-bottom: 2.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
       position: relative;
     }
 
     .section-title::after {
       content: '';
       display: block;
-      width: 70px;
-      height: 3px;
-      background-color: var(--gold);
-      margin: 0.6rem auto 0;
-      border-radius: 2px;
-      box-shadow: 0 0 8px var(--gold);
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 10px auto 0;
     }
 
-    /* Galería de Presentación */
+    /* Galería */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
     .gallery-card {
-      background: var(--dark-card);
-      border-radius: 20px;
+      background-color: var(--dark-card);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--gold);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+      border: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     .gallery-card img {
       width: 100%;
-      height: 240px;
+      height: 220px;
       object-fit: cover;
       display: block;
     }
 
     .gallery-info {
-      padding: 1.2rem;
-      text-align: center;
+      padding: 15px;
     }
 
     .gallery-info h3 {
-      color: var(--gold);
+      color: var(--gold-light);
       font-size: 1.2rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 5px;
     }
 
     .gallery-info p {
       color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Sección Ingredientes */
+    .ingredients-box {
+      background-color: var(--dark-card);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .ingredients-list {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .ingredients-list li {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 15px;
+      border-radius: 8px;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* Bloque de Preguntas Frecuentes */
+    .faq-item {
+      background-color: var(--dark-card);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--gold);
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      border-right: 1px solid rgba(212, 175, 55, 0.1);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .faq-item h3 {
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: var(--text-muted);
       font-size: 0.95rem;
     }
 
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    .story-text p {
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
-      color: var(--text-muted);
-    }
-
-    .story-card {
-      background: var(--burgundy-dark);
-      padding: 1.5rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      border: 1px solid var(--gold);
-      margin-bottom: 1.5rem;
-    }
-
-    .story-card h3 {
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Tabla Nutricional */
-    .nutrition-label {
-      background: #ffffff;
-      border: 3px solid #000000;
-      padding: 1.2rem;
+    /* Tabla de Precios y Cotizador */
+    .price-card {
+      background-color: var(--dark-card);
       border-radius: 12px;
-      font-family: Arial, Helvetica, sans-serif;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      max-width: 380px;
-      margin: 0 auto;
-      color: #000000;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
     }
 
-    .nutrition-title {
-      font-size: 1.5rem;
-      font-weight: 900;
-      border-bottom: 10px solid #000000;
-      padding-bottom: 4px;
-      margin-bottom: 6px;
-      line-height: 1.1;
-    }
-
-    .nutrition-sub {
-      font-size: 0.85rem;
-      border-bottom: 4px solid #000000;
-      padding-bottom: 6px;
-      margin-bottom: 6px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .calories-box {
-      border-bottom: 8px solid #000000;
-      padding: 6px 0;
-      margin-bottom: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .calories-title {
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
-
-    .calories-val {
-      font-size: 2.2rem;
-      font-weight: 900;
-    }
-
-    .dv-header {
-      text-align: right;
-      font-size: 0.75rem;
-      font-weight: bold;
-      border-bottom: 1px solid #000000;
-      padding-bottom: 4px;
-    }
-
-    .nutrition-row {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #d1d5db;
-      padding: 4px 0;
-      font-size: 0.85rem;
-    }
-
-    .nutrition-row.indent {
-      padding-left: 1.2rem;
-    }
-
-    .nutrition-row strong {
-      font-weight: 800;
-    }
-
-    .nutrition-footer {
-      font-size: 0.68rem;
-      margin-top: 8px;
-      border-top: 4px solid #000000;
-      padding-top: 6px;
-      color: #4b5563;
-      line-height: 1.2;
-    }
-
-    /* Cards de Ingredientes Interactivos */
-    .ingredients-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .ingredient-card {
-      background: var(--dark-card);
-      padding: 1.8rem 1.5rem;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: 1px solid var(--burgundy-light);
-      position: relative;
-    }
-
-    .ingredient-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
-    }
-
-    .ingredient-icon {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .ingredient-card h3 {
-      color: var(--gold);
-    }
-
-    .ingredient-card p {
-      color: var(--text-muted);
-    }
-
-    .click-hint {
-      display: inline-block;
-      margin-top: 0.8rem;
-      font-size: 0.85rem;
-      color: var(--black);
-      font-weight: 700;
-      background: var(--gold);
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-    }
-
-    /* Modal / Ventana Emergente */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .price-table {
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(5px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
+      border-collapse: collapse;
+      margin-bottom: 25px;
     }
 
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
+    .price-table th, .price-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .modal-content {
-      background: var(--dark-card);
-      border: 2px solid var(--gold);
-      color: var(--text-light);
-      padding: 2rem;
-      border-radius: 24px;
-      max-width: 500px;
-      width: 90%;
-      max-height: 85vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
-      position: relative;
-    }
-
-    .modal-overlay.active .modal-content {
-      transform: translateY(0);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1.2rem;
-      background: var(--burgundy);
-      border: 1px solid var(--gold);
-      font-size: 1.2rem;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .price-table th {
       color: var(--gold);
-      transition: background 0.2s;
-    }
-
-    .close-btn:hover {
-      background: var(--burgundy-light);
-    }
-
-    .modal-title {
-      color: var(--gold);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .ingredient-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-
-    .ingredient-list li {
-      background: var(--burgundy-dark);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 0.7rem 1rem;
-      border-radius: 10px;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 1rem;
-      color: var(--text-light);
     }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature-box {
-      background: linear-gradient(135deg, var(--dark-card), var(--burgundy-dark));
-      padding: 2rem;
-      border-radius: 16px;
-      border-left: 5px solid var(--gold);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-
-    .feature-box h3 {
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .feature-box p {
-      color: var(--text-muted);
-    }
-
-    .calc-container {
-      background: var(--dark-card);
+    /* Cuadro Compromiso de Calidad */
+    .commitment-card {
+      background: linear-gradient(135deg, rgba(92, 15, 28, 0.4), var(--dark-card));
       border: 1px solid var(--gold);
-      padding: 2.5rem;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
-      margin: 0 auto;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 25px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .commitment-card h3 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .commitment-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Calculadora */
+    .calculator {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px dashed var(--gold);
+      margin-top: 20px;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 15px;
     }
 
     .form-group label {
       display: block;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--gold);
+      margin-bottom: 5px;
+      color: var(--gold-light);
     }
 
     .form-group select, .form-group input {
       width: 100%;
-      padding: 0.8rem;
-      border: 1px solid var(--gold);
-      background: var(--black);
-      color: var(--text-light);
-      border-radius: 10px;
-      font-size: 1rem;
-      font-family: inherit;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background-color: #222;
+      color: #fff;
     }
 
-    .total-box {
-      background: var(--burgundy-dark);
-      border: 1px solid var(--gold);
-      padding: 1.2rem;
-      border-radius: 12px;
-      text-align: center;
-      margin-top: 1.5rem;
+    .total-display {
       font-size: 1.3rem;
-      font-weight: 800;
       color: var(--gold);
+      font-weight: bold;
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    /* Botones de Contacto */
+    .btn-whatsapp {
+      display: block;
+      width: 100%;
+      background-color: #25D366;
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1da851;
     }
 
     footer {
-      background-color: var(--black);
-      border-top: 1px solid var(--gold);
-      color: var(--gold);
       text-align: center;
-      padding: 1.8rem;
-      margin-top: 3rem;
+      padding: 30px 20px;
+      background-color: #08080a;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      margin-top: 40px;
     }
 
-    @media (max-width: 768px) {
-      .story-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      nav ul {
-        display: none;
-      }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 15px 0 20px 0;
+    }
+
+    .social-btn {
+      color: #ffffff;
+      text-decoration: none;
+      background: rgba(212, 175, 55, 0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(212, 175, 55, 0.25);
+      border-color: var(--gold);
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="nav-container">
-      <div>
-        <div class="brand-logo">✨ Tainted Sweets Nakahara</div>
-        <div class="sub-brand">Turrón Tradicional • Lima, Perú</div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#presentacion">Presentación</a></li>
-          <li><a href="#historia">Historia y Nutrición</a></li>
-          <li><a href="#ingredientes">Ingredientes</a></li>
-          <li><a href="#caracteristicas">¿Por qué elegirlos?</a></li>
-          <li><a href="#pedidos">Calculadora</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1 class="brand-title">✨ Tainted Sweets Nakahara ✨</h1>
+    <p class="subtitle">Turrón Tradicional • Lima, Perú</p>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Tainted Sweets Nakahara</h1>
-      <div class="hero-tag">Turrón Tradicional</div>
-      <p>Suaves bastones de harina, miel de frutas naturales y chispeantes grageas de colores. La tradición limeña más dulce.</p>
-      <a href="#pedidos" class="btn">Calcular mi Pedido</a>
-    </div>
-  </section>
+  <div class="container">
 
-  <!-- Sección Galería de Presentación con enlaces alternativos garantizados -->
-  <section id="presentacion">
-    <h2 class="section-title">Nuestra Presentación</h2>
-    <div class="gallery-grid">
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/9F0M5H54/image.jpg" onerror="this.onerror=null; this.src='https://ibb.co/JW7fjtJ1';" alt="Caja de Tainted Sweets Nakahara">
-        <div class="gallery-info">
-          <h3>Empaque Exclusivo</h3>
-          <p>Diseño elegante listo para regalar o disfrutar en ocasiones especiales.</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/c4Y2T71M/image.jpg" onerror="this.onerror=null; this.src='https://ibb.co/fcL9xtd';" alt="Detalle del Turrón">
-        <div class="gallery-info">
-          <h3>Corte y Textura</h3>
-          <p>Capas perfectas bañadas en abundante miel y grageas seleccionadas.</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="https://i.postimg.cc/3J8RkMv3/image.jpg" onerror="this.onerror=null; this.src='https://ibb.co/Q3KWccVx';" alt="Presentación Completa">
-        <div class="gallery-info">
-          <h3>Calidad Garantizada</h3>
-          <p>Elaborado bajo los más altos estándares de higiene y tradición.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="historia">
-    <h2 class="section-title">Historia y Nutrición</h2>
-    <div class="story-grid">
-      <div class="story-left">
-        <div class="story-text">
-          <p>El <strong>Turrón Tradicional</strong> de Tainted Sweets Nakahara es uno de los postres más representativos del Perú, elaborado con técnicas artesanales que mantienen viva la receta clásica.</p>
-          <p>Combina la sutileza de la miel de frutas locales con galletas aromáticas horneadas con toque de anís y ajonjolí.</p>
-        </div>
-        <div class="story-card">
-          <h3>Sabor Tradicional ✨</h3>
-          <p>Cada lote es preparado siguiendo cuidadosos procesos de calidad para garantizar la textura crujiente y suave en cada bocado.</p>
-        </div>
-      </div>
-
-      <!-- Tabla de Información Nutricional -->
-      <div class="nutrition-label">
-        <div class="nutrition-title">Información Nutricional</div>
-        <div class="nutrition-sub">
-          <span>Tamaño por porción: <strong>100 g</strong></span>
-        </div>
-        <div class="nutrition-sub">
-          <span>Porciones por envase: <strong>Aprox. 20</strong></span>
-        </div>
-        
-        <div class="calories-box">
-          <div>
-            <div style="font-size: 0.75rem; font-weight: bold;">Cantidad por porción</div>
-            <div class="calories-title">Calorías</div>
+    <!-- Sección Galería de Presentación -->
+    <section id="presentacion">
+      <h2 class="section-title">Nuestra Presentación</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="foto1.jpg" alt="Empaque de Turrón">
+          <div class="gallery-info">
+            <h3>Empaque Exclusivo</h3>
+            <p>Diseño elegante listo para regalar o disfrutar en ocasiones especiales.</p>
           </div>
-          <div class="calories-val">425</div>
         </div>
 
-        <div class="dv-header">% Valor Diario*</div>
-
-        <div class="nutrition-row">
-          <span><strong>Grasas Totales</strong> 15.2 g</span>
-          <span><strong>23%</strong></span>
-        </div>
-        <div class="nutrition-row indent">
-          <span>Grasas Saturadas 6.8 g</span>
-          <span><strong>34%</strong></span>
-        </div>
-        <div class="nutrition-row indent">
-          <span>Grasas Trans 0.2 g</span>
-          <span></span>
+        <div class="gallery-card">
+          <img src="foto2.jpg" alt="Detalle del Turrón">
+          <div class="gallery-info">
+            <h3>Corte y Textura</h3>
+            <p>Capas perfectas bañadas en abundante miel y grageas seleccionadas.</p>
+          </div>
         </div>
 
-        <div class="nutrition-row">
-          <span><strong>Colesterol</strong> 18 mg</span>
-          <span><strong>6%</strong></span>
-        </div>
-
-        <div class="nutrition-row">
-          <span><strong>Sodio</strong> 75 mg</span>
-          <span><strong>3%</strong></span>
-        </div>
-
-        <div class="nutrition-row">
-          <span><strong>Carbohidratos Totales</strong> 68.5 g</span>
-          <span><strong>25%</strong></span>
-        </div>
-        <div class="nutrition-row indent">
-          <span>Fibra Dietética 1.8 g</span>
-          <span><strong>6%</strong></span>
-        </div>
-        <div class="nutrition-row indent">
-          <span>Azúcares Totales 42.1 g</span>
-          <span></span>
-        </div>
-        <div class="nutrition-row indent" style="padding-left: 2rem;">
-          <span>Incluye Azúcares Añadidos 39.5 g</span>
-          <span><strong>79%</strong></span>
-        </div>
-
-        <div class="nutrition-row">
-          <span><strong>Proteínas</strong> 4.2 g</span>
-          <span><strong>8%</strong></span>
-        </div>
-
-        <div class="nutrition-footer">
-          * El % Valor Diario (VD) le indica cuánto un nutriente en una porción de alimento contribuye a una dieta diaria. 2,000 calorías al día se utiliza para asesoramiento nutricional general.
+        <div class="gallery-card">
+          <img src="foto3.jpg" alt="Presentación Completa">
+          <div class="gallery-info">
+            <h3>Calidad Garantizada</h3>
+            <p>Elaborado bajo los más altos estándares de higiene y tradición.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="ingredientes">
-    <h2 class="section-title">Ingredientes Clave</h2>
-    <p style="text-align: center; margin-top: -1.5rem; margin-bottom: 2rem; color: var(--text-muted);">Haz clic en cada categoría para ver la lista completa de insumos 👇</p>
-    
-    <div class="ingredients-grid">
-      <div class="ingredient-card" onclick="openModal('masa')">
-        <div class="ingredient-icon">🌾</div>
-        <h3>Masa Suave</h3>
-        <p>Bastones horneados con toques de anís y ajonjolí.</p>
-        <span class="click-hint">Ver 12 ingredientes 🔍</span>
+    <!-- Sección Ingredientes -->
+    <section id="ingredientes">
+      <div class="ingredients-box">
+        <h2 class="section-title" style="margin-bottom: 15px;">Ingredientes Seleccionados</h2>
+        <p style="text-align: center; color: var(--text-muted);">Nuestra receta combina tradición e insumos de primera calidad para lograr un sabor único:</p>
+        <ul class="ingredients-list">
+          <li>Harina de trigo fortificada</li>
+          <li>Ajonjolí tostado y anís</li>
+          <li>Mantequilla seleccionada</li>
+          <li>Miel de frutas naturales</li>
+          <li>Frutas secas y confitadas</li>
+          <li>Grageas artesanales</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Sección ¿Preguntas? -->
+    <section id="preguntas">
+      <h2 class="section-title">¿Preguntas?</h2>
+      
+      <div class="faq-item">
+        <h3>¿Cuánto tiempo dura el turrón fresco?</h3>
+        <p>Conservado en un lugar fresco y seco, el turrón mantiene su suavidad y sabor óptimo hasta por 30 días. No requiere refrigeración; de hecho, guardarlo en la refrigeradora puede alterar la textura de la miel.</p>
       </div>
 
-      <div class="ingredient-card" onclick="openModal('miel')">
-        <div class="ingredient-icon">🍎</div>
-        <h3>Miel de Frutas</h3>
-        <p>Miel espesa elaborada con frutas frescas y especias.</p>
-        <span class="click-hint">Ver 9 ingredientes 🔍</span>
+      <div class="faq-item">
+        <h3>¿Cómo realizan las entregas?</h3>
+        <p>Al ser una producción 100% artesanal y elaborada por una sola repostera, trabajamos con cupos limitados por día para garantizar la máxima frescura.</p>
+        <p style="margin-top: 8px;">• <strong>Entregas:</strong> Puntos de encuentro céntricos previamente coordinados.</p>
+        <p>• <strong>Anticipación:</strong> Los pedidos se reservan con al menos 72 horas de anticipación (o hasta agotar el cupo diario).</p>
       </div>
+    </section>
 
-      <div class="ingredient-card" onclick="openModal('grageas')">
-        <div class="ingredient-icon">🍬</div>
-        <h3>Grageas y Adornos</h3>
-        <p>El toque festivo y crocante de colores.</p>
-        <span class="click-hint">Ver 6 grageas 🔍</span>
-      </div>
-    </div>
-  </section>
+    <!-- Sección Cotizador y Pedidos -->
+    <section id="pedidos" style="margin-top: 40px;">
+      <h2 class="section-title">Precios y Pedidos</h2>
+      <div class="price-card">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Presentación</th>
+              <th>Peso</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Porción Personal</td>
+              <td>250g</td>
+              <td>S/ 12.00</td>
+            </tr>
+            <tr>
+              <td>Medio Kilo</td>
+              <td>500g</td>
+              <td>S/ 22.00</td>
+            </tr>
+            <tr>
+              <td>Un Kilo Tradicional</td>
+              <td>1 kg</td>
+              <td>S/ 40.00</td>
+            </tr>
+          </tbody>
+        </table>
 
-  <section id="caracteristicas">
-    <h2 class="section-title">¿Por qué es Único?</h2>
-    <div class="features-grid">
-      <div class="feature-box">
-        <h3>100% Artesanal</h3>
-        <p>Preparado siguiendo la receta tradicional sin preservantes ni colorantes artificiales.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Aroma Inigualable</h3>
-        <p>El toque exacto de anís y ajonjolí combina a la perfección con la miel pura de frutas.</p>
-      </div>
-    </div>
-  </section>
+        <div class="calculator">
+          <h3 style="color: var(--gold-light); text-align: center; margin-bottom: 15px;">Calcula tu Pedido</h3>
+          
+          <div class="form-group">
+            <label for="portion">Elige la presentación:</label>
+            <select id="portion" onchange="calculateTotal()">
+              <option value="12">Porción Personal (250g) - S/ 12.00</option>
+              <option value="22">Medio Kilo (500g) - S/ 22.00</option>
+              <option value="40" selected>Un Kilo Tradicional (1 kg) - S/ 40.00</option>
+            </select>
+          </div>
 
-  <section id="pedidos">
-    <h2 class="section-title">Calculadora de Pedidos</h2>
-    <div class="calc-container">
-      <div class="form-group">
-        <label for="presentacion">Selecciona la Presentación:</label>
-        <select id="presentacion" onchange="calcularTotal()">
-          <option value="15">Caja de 500g - S/ 15.00</option>
-          <option value="28">Caja de 1 kg - S/ 28.00</option>
-          <option value="50">Presentación Regalo (2 kg) - S/ 50.00</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" value="1" min="1" max="20" onchange="calcularTotal()" onkeyup="calcularTotal()">
-      </div>
-      <div class="total-box">
-        Total Estimado: S/ <span id="total">15.00</span>
-      </div>
-    </div>
-  </section>
+          <div class="form-group">
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" value="1" min="1" onchange="calculateTotal()" oninput="calculateTotal()">
+          </div>
 
-  <footer>
-    <p>Tainted Sweets Nakahara • Turrón Tradicional • Perú</p>
-  </footer>
+          <div class="total-display" id="totalDisplay">
+            Total estimado: S/ 40.00
+          </div>
 
-  <!-- Modal Emergente para Ingredientes -->
-  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOuterClick(event)">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">✕</button>
-      <div id="modalBody"></div>
-    </div>
+          <a href="#" id="wsBtn" target="_blank" class="btn-whatsapp">📲 Reservar por WhatsApp</a>
+        </div>
+
+        <!-- Cuadro Compromiso de Calidad -->
+        <div class="commitment-card">
+          <h3>NUESTRO COMPROMISO DE CALIDAD</h3>
+          <p>Cada barra de turrón se elabora bajo procesos artesanales cuidando la higiene y selección de insumos frescos. La combinación balanceada entre la masa crujiente y el punto exacto de la miel de fruta garantiza una experiencia auténtica en cada bocado.</p>
+        </div>
+
+      </div>
+    </section>
+
   </div>
 
+  <footer>
+    <p style="color: var(--gold-light); font-weight: 600; font-size: 1rem;">Síguenos en nuestras redes sociales</p>
+    
+    <div class="social-links">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/Tainted_sweets_Nakahara" target="_blank" class="social-btn">
+        <i class="fa-brands fa-instagram" style="color: #e1306c; font-size: 1.1rem;"></i> @Tainted_sweets_Nakahara
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@Tainted_sweets_Nakahara" target="_blank" class="social-btn">
+        <i class="fa-brands fa-tiktok" style="color: #00f2fe; font-size: 1.1rem;"></i> @Tainted_sweets_Nakahara
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/Tainted_sweets_Nakahara" target="_blank" class="social-btn">
+        <i class="fa-brands fa-facebook" style="color: #1877f2; font-size: 1.1rem;"></i> @Tainted_sweets_Nakahara
+      </a>
+    </div>
+
+    <p>© Tainted Sweets Nakahara • Turrón Tradicional</p>
+    <p style="font-size: 0.8rem; margin-top: 5px; color: #888;">Lima, Perú</p>
+  </footer>
+
   <script>
-    const dataIngredientes = {
-      masa: {
-        title: "🌾 Ingredientes para la Masa (Galletas)",
-        items: [
-          "🌾 Harina pastelera",
-          "🥛 Leche en polvo",
-          "🍬 Azúcar blanca granulada",
-          "🧂 Sal",
-          "✨ Polvo para hornear",
-          "🧈 Manteca vegetal",
-          "🌿 Anís en granos tostado molido",
-          "🌱 Ajonjolí tostado molido",
-          "☕ Agua de anís",
-          "💧 Esencia de vainilla",
-          "🟡 Colorante amarillo huevo",
-          "🥚 Huevos (yemas)"
-        ]
-      },
-      miel: {
-        title: "🍎 Ingredientes para la Miel",
-        items: [
-          "🍏 Membrillo",
-          "🟤 Chancaca",
-          "🍊 Naranja",
-          "🍋 Limón",
-          "🍍 Cáscara de piña",
-          "🌺 Hojas de higo",
-          "🌰 Clavos de olor",
-          "🪵 Raja de canela",
-          "🍬 Azúcar granulada"
-        ]
-      },
-      grageas: {
-        title: "🍬 Grageas Seleccionadas",
-        items: [
-          "🐌 Grageas Caracol Turrón",
-          "🐛 Grageas Gusanito para Turrón",
-          "👶 Grageas Crespo Bebé Turrón Granel",
-          "🌀 Grageas Crespo Turrón Granel",
-          "🌈 Grageas Bebé Turrón Colores Granel",
-          "💊 Grageas Pastilla Turrón"
-        ]
-      }
-    };
-
-    function openModal(category) {
-      const modal = document.getElementById('modalOverlay');
-      const modalBody = document.getElementById('modalBody');
-      const info = dataIngredientes[category];
-
-      let itemsHtml = info.items.map(item => `<li>${item}</li>`).join('');
-
-      modalBody.innerHTML = `
-        <h3 class="modal-title">${info.title}</h3>
-        <ul class="ingredient-list">
-          ${itemsHtml}
-        </ul>
-      `;
-
-      modal.classList.add('active');
+    function calculateTotal() {
+      const price = parseFloat(document.getElementById('portion').value);
+      const qty = parseInt(document.getElementById('quantity').value) || 0;
+      const total = price * qty;
+      
+      document.getElementById('totalDisplay').innerText = 'Total estimado: S/ ' + total.toFixed(2);
+      
+      const selectElement = document.getElementById('portion');
+      const presentationText = selectElement.options[selectElement.selectedIndex].text;
+      const message = `Hola, quisiera realizar un pedido de Tainted Sweets Nakahara:%0A- Presentación: ${presentationText}%0A- Cantidad: ${qty}%0A- Total estimado: S/ ${total.toFixed(2)}`;
+      
+      document.getElementById('wsBtn').href = `https://wa.me/51900000000?text=${message}`;
     }
 
-    function closeModal() {
-      document.getElementById('modalOverlay').classList.remove('active');
-    }
-
-    function closeModalOnOuterClick(e) {
-      if (e.target.id === 'modalOverlay') {
-        closeModal();
-      }
-    }
-
-    function calcularTotal() {
-      const precio = parseFloat(document.getElementById('presentacion').value);
-      const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
-      const total = (precio * cantidad).toFixed(2);
-      document.getElementById('total').innerText = total;
-    }
+    calculateTotal();
   </script>
 </body>
 </html>
