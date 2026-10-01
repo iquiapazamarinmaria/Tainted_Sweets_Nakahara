@@ -382,7 +382,7 @@
       </div>
     </section>
 
-    <!-- Sección Ingredientes Interactiva -->
+   <!-- Sección Ingredientes Interactiva -->
     <section id="ingredientes">
       <div class="ingredients-box">
         <h2 class="section-title" style="margin-bottom: 10px;">Ingredientes Seleccionados</h2>
@@ -392,39 +392,51 @@
         <div class="ingredients-tabs">
           <button class="tab-btn active" onclick="openCategory('masa', this)">🌾 Masa Tradicional</button>
           <button class="tab-btn" onclick="openCategory('miel', this)">🍯 Miel de Frutas</button>
-          <button class="tab-btn" onclick="openCategory('decoracion', this)">🍬 Decoración y Grageas</button>
+          <button class="tab-btn" onclick="openCategory('decoracion', this)">🍬 Grageas</button>
         </div>
 
         <!-- Contenido 1: Masa -->
         <div id="masa" class="tab-content active">
           <ul class="ingredients-list">
-            <li>Harina de trigo fortificada</li>
+            <li>Harina pastelera</li>
+            <li>Leche en polvo</li>
+            <li>Azúcar blanca granulada</li>
+            <li>Sal</li>
+            <li>Polvo para hornear</li>
+            <li>Manteca vegetal</li>
+            <li>Anís en granos tostado</li>
             <li>Ajonjolí tostado</li>
-            <li>Anís en grano seleccionado</li>
-            <li>Mantequilla de primera calidad</li>
-            <li>Yemas de huevo frescas</li>
-            <li>Esencia natural de vainilla</li>
+            <li>Agua de anís</li>
+            <li>Esencia de vainilla</li>
+            <li>Colorante amarillo</li>
+            <li>Huevos</li>
           </ul>
         </div>
 
         <!-- Contenido 2: Miel -->
         <div id="miel" class="tab-content">
           <ul class="ingredients-list">
-            <li>Miel de frutas naturales (Manzana, Membrillo, Naranja)</li>
-            <li>Chancaia tradicional</li>
+            <li>Membrillo</li>
+            <li>Chancaca</li>
+            <li>Naranja</li>
+            <li>Limón</li>
+            <li>Cáscara de piña</li>
             <li>Hojas de higo</li>
-            <li>Especias (Canela y Clavo de olor)</li>
-            <li>Jugo natural de piña y maracuyá</li>
+            <li>Clavos de olor</li>
+            <li>Raja de canela</li>
+            <li>Azúcar granulada</li>
           </ul>
         </div>
 
-        <!-- Contenido 3: Decoración -->
+        <!-- Contenido 3: Grageas -->
         <div id="decoracion" class="tab-content">
           <ul class="ingredients-list">
-            <li>Grageas artesanales multicolores</li>
-            <li>Frutas confitadas de calidad</li>
-            <li>Higos en almíbar</li>
-            <li>Caramelos tradicionales</li>
+            <li>Grageas Pastilla Turrón</li>
+            <li>Grageas Bebé Turrón Colores Granel</li>
+            <li>Grageas Crespo Turrón Granel</li>
+            <li>Grageas Crespo Bebé Turrón Granel</li>
+            <li>Grageas Gusanito para Turrón</li>
+            <li>Grageas Caracol Turrón</li>
           </ul>
         </div>
 
@@ -563,7 +575,8 @@
       const presentationText = selectElement.options[selectElement.selectedIndex].text;
       const message = `Hola, quisiera realizar un pedido de Tainted Sweets Nakahara:%0A- Presentación: ${presentationText}%0A- Cantidad: ${qty}%0A- Total estimado: S/ ${total.toFixed(2)}`;
       
-      document.getElementById('wsBtn').href = `https://wa.me/51960150092?text=${message}`;
+      // REEMPLAZA "51900000000" POR TU NÚMERO REAL
+      document.getElementById('wsBtn').href = `https://wa.me/51900000000?text=${message}`;
     }
 
     calculateTotal();
