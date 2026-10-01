@@ -112,7 +112,7 @@
       font-size: 0.9rem;
     }
 
-    /* Sección Ingredientes */
+    /* Sección Ingredientes Interactiva */
     .ingredients-box {
       background-color: var(--dark-card);
       border-radius: 12px;
@@ -121,19 +121,59 @@
       border: 1px solid rgba(212, 175, 55, 0.2);
     }
 
+    .ingredients-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--text-light);
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .ingredients-list {
       list-style-type: none;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+      gap: 12px;
       margin-top: 15px;
     }
 
     .ingredients-list li {
       background: rgba(255, 255, 255, 0.03);
-      padding: 10px 15px;
+      padding: 12px 15px;
       border-radius: 8px;
       border-left: 3px solid var(--gold);
+      font-size: 0.95rem;
     }
 
     /* Bloque de Preguntas Frecuentes */
@@ -342,19 +382,52 @@
       </div>
     </section>
 
-    <!-- Sección Ingredientes -->
+    <!-- Sección Ingredientes Interactiva -->
     <section id="ingredientes">
       <div class="ingredients-box">
-        <h2 class="section-title" style="margin-bottom: 15px;">Ingredientes Seleccionados</h2>
-        <p style="text-align: center; color: var(--text-muted);">Nuestra receta combina tradición e insumos de primera calidad para lograr un sabor único:</p>
-        <ul class="ingredients-list">
-          <li>Harina de trigo fortificada</li>
-          <li>Ajonjolí tostado y anís</li>
-          <li>Mantequilla seleccionada</li>
-          <li>Miel de frutas naturales</li>
-          <li>Frutas secas y confitadas</li>
-          <li>Grageas artesanales</li>
-        </ul>
+        <h2 class="section-title" style="margin-bottom: 10px;">Ingredientes Seleccionados</h2>
+        <p style="text-align: center; color: var(--text-muted);">Selecciona cada categoría para conocer los insumos de nuestra receta artesanal:</p>
+        
+        <!-- Botones de Pestañas -->
+        <div class="ingredients-tabs">
+          <button class="tab-btn active" onclick="openCategory('masa', this)">🌾 Masa Tradicional</button>
+          <button class="tab-btn" onclick="openCategory('miel', this)">🍯 Miel de Frutas</button>
+          <button class="tab-btn" onclick="openCategory('decoracion', this)">🍬 Decoración y Grageas</button>
+        </div>
+
+        <!-- Contenido 1: Masa -->
+        <div id="masa" class="tab-content active">
+          <ul class="ingredients-list">
+            <li>Harina de trigo fortificada</li>
+            <li>Ajonjolí tostado</li>
+            <li>Anís en grano seleccionado</li>
+            <li>Mantequilla de primera calidad</li>
+            <li>Yemas de huevo frescas</li>
+            <li>Esencia natural de vainilla</li>
+          </ul>
+        </div>
+
+        <!-- Contenido 2: Miel -->
+        <div id="miel" class="tab-content">
+          <ul class="ingredients-list">
+            <li>Miel de frutas naturales (Manzana, Membrillo, Naranja)</li>
+            <li>Chancaia tradicional</li>
+            <li>Hojas de higo</li>
+            <li>Especias (Canela y Clavo de olor)</li>
+            <li>Jugo natural de piña y maracuyá</li>
+          </ul>
+        </div>
+
+        <!-- Contenido 3: Decoración -->
+        <div id="decoracion" class="tab-content">
+          <ul class="ingredients-list">
+            <li>Grageas artesanales multicolores</li>
+            <li>Frutas confitadas de calidad</li>
+            <li>Higos en almíbar</li>
+            <li>Caramelos tradicionales</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
@@ -466,6 +539,19 @@
   </footer>
 
   <script>
+    // Función para alternar pestañas de ingredientes
+    function openCategory(categoryName, element) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(categoryName).classList.add('active');
+      element.classList.add('active');
+    }
+
+    // Función para el cotizador
     function calculateTotal() {
       const price = parseFloat(document.getElementById('portion').value);
       const qty = parseInt(document.getElementById('quantity').value) || 0;
@@ -477,7 +563,7 @@
       const presentationText = selectElement.options[selectElement.selectedIndex].text;
       const message = `Hola, quisiera realizar un pedido de Tainted Sweets Nakahara:%0A- Presentación: ${presentationText}%0A- Cantidad: ${qty}%0A- Total estimado: S/ ${total.toFixed(2)}`;
       
-      document.getElementById('wsBtn').href = `https://wa.me/51900000000?text=${message}`;
+      document.getElementById('wsBtn').href = `https://wa.me/51960150092?text=${message}`;
     }
 
     calculateTotal();
